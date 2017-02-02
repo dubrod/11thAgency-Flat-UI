@@ -4,19 +4,26 @@ dl.accordion{
       margin-top:$baseGutter;
 
     dt{
-      padding: $baseGutter/2;
+      padding: $baseGutter/2 $baseGutter;
       cursor:pointer;
       margin-top: .2rem;
-      background-color: $light-gray;
+      background-color: #dfe3d5;
+      color:#a9cb61;
       display:flex;
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items:center;
       width:100%;
       transition: background-color $timing ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 1rem;
+
+      svg{fill:#666;}
 
       &:hover{
-        background-color: darken($light-gray,2%);
+        background-color: $light-gray;
+        color:$dark-gray;
       }
 
       &.active{
