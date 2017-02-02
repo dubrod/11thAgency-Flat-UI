@@ -19,5 +19,5 @@ FREE UI Framework from me: https://github.com/dubrod/Brash-UI
 
 ---
 
-### HTML 
-![Screenshot](free_ui_kit_psd_by_11thagency.jpg)
+### HTML
+![Screenshot](screenshot.png)
