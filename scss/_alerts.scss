@@ -1,0 +1,50 @@
+@mixin alertStates($color){
+  background-color: lighten($color,22%);
+  color: darken($color,7%);
+  i{ svg{fill: darken($color,7%);} }
+}
+
+.alert{
+  border-radius: $radius;
+  position: relative;
+  margin-bottom: $baseGutter;
+
+  p{
+    padding:$baseGutter;
+    font-size: 1rem;
+  }
+  i{
+    position: absolute;
+    top:0;
+    right:0;
+    padding: $baseGutter;
+    cursor: pointer;
+  }
+
+  @include alertStates($info);
+}
+
+.alert-purple{
+  @extend .alert;
+  @include alertStates($purple);
+}
+.alert-primary{
+  @extend .alert;
+  @include alertStates($primary);
+}
+.alert-secondary{
+  @extend .alert;
+  @include alertStates($secondary);
+}
+.alert-success{
+  @extend .alert;
+  @include alertStates($success);
+}
+.alert-warning{
+  @extend .alert;
+  @include alertStates($warning);
+}
+.alert-danger{
+  @extend .alert;
+  @include alertStates($danger);
+}

@@ -1,0 +1,25 @@
+.badges{
+  &.inline{
+    li{display:inline-block;}
+  }
+
+  ul{list-style:none;}
+  a{
+    padding:$baseGutter/2 $baseGutter;
+    border-radius: $radius;
+    color: $blue;
+    font-size:1rem;
+    display: block;
+
+    &.active{
+      background-color: $secondary; color:$white;
+      .info-dot{
+        background-color: $white;
+        color: $blue;
+      }
+    }
+    &:hover:not(.active){
+      background-color: $light-gray;
+    }
+  }
+}

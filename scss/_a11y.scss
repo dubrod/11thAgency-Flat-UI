@@ -1,0 +1,6 @@
+//Brash a11y & wcag styles
+.sr-only{position: absolute !important;height: 1px; width: 1px;border: 0; padding: 0;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);}
+
+//give focused elements an outline
+body *:focus,body *:active{outline: none;}
+#logo a:focus{outline: 2px solid $purple;}

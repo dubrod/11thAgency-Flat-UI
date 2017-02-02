@@ -1,0 +1,67 @@
+.plank{
+  padding:$baseGutter*3 0;
+
+  .halftone{
+    color: rgba(255,255,255,.3);
+    padding: $baseGutter*2 0;
+  }
+
+  header{
+    h1{
+      font-size:4rem;
+      line-height:3rem;
+      font-weight: 400;
+      padding: $baseGutter 0 $baseGutter*3 0;
+    }
+  }
+
+  p{
+    font-size:1.5rem;
+    line-height: 3rem;
+  }
+
+  blockquote{
+    font-family: $serifFont;
+    font-size:1.6rem;
+    line-height: 3rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+    position: relative;
+    padding:$baseGutter*3 0 $baseGutter*2 $baseGutter*6;
+
+    &:before{
+      content: '“';
+      font-size:6rem;
+      font-family: $serifFont;
+      position: absolute;
+      top:$baseGutter*5.5;
+      left:0;
+      color:inherit;
+    }
+
+    i{
+      text-align: center;
+      display:inline-block;
+      font-family: $bodyFont;
+      width:80px;
+      height:80px;
+      line-height: 80px;
+      font-style: normal;
+      font-size:1rem;
+      background-color: rgba(0,0,0,.2);
+      border-radius:50%;
+      color:$white;
+    }
+    i+span{
+      font-family: $bodyFont;
+      text-transform: uppercase;
+      padding-left: $baseGutter;
+    }
+  }
+
+}
+
+.secondary_plank{
+  background-color: $secondary;
+  h1,p,blockquote{color:$white;}
+}

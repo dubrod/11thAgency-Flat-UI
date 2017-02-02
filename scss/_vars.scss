@@ -1,0 +1,50 @@
+//Brash Vars
+
+$radius: .4rem;
+
+//Type
+$bodyFont: "Open Sans", Arial, sans-serif;
+$headingFont: "Assistant", Helvetica Neue, Helvetica, sans-serif;
+$serifFont: "Merriweather", Times, serif;
+strong, .bold{font-weight:600;}
+
+//Colors
+$white: #FFFFFF;
+$black: #232831;
+
+$orange: #fe7849;
+$orange-hover: #fe9a77;
+$dark-orange: #be5a37;
+
+$green: #8ebf4a;
+$green-hover: #aacf77;
+$dark-green: #6a8f37;
+
+$red: #cf4951;
+$dark-red: #d02727;
+
+$gray: #919498;
+$dark-gray: #444850;
+$light-gray: #e9eaeb;
+
+$blue: #006394;
+$blue-gray: #b2c6cd;
+$teal: #4ac3cc;
+$purple: #85579e;
+
+$primary: $orange;
+$secondary: $green;
+$success: $teal;
+$info: $blue-gray;
+$warning: $orange;
+$danger: $red;
+
+//Spacing
+$baseGutter: 1rem;
+
+//transition timing
+$timing: .4s;
+
+//Debug
+.debug{background-color:rgba(125, 211, 236, 0.2);}
+.point-grid{background-image: url('baseline-16.svg');background-size: 1rem;}

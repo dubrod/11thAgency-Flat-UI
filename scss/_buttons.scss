@@ -1,0 +1,94 @@
+//Brash Buttons
+@mixin btn{
+  transition-duration: $timing;
+  transition-timing-function: ease;
+  transition-property: background-color;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-block;
+  line-height: $baseGutter*1.6;
+  height: auto;
+  padding: $baseGutter/2 $baseGutter;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: $white;
+  min-width: 120px;
+}
+
+@mixin buttonStates($color){
+  &:hover {
+    background-color: lighten($color, 10%);
+  }
+  &:active {
+    background-color: darken($color, 16%);
+  }
+  &:disabled{
+    background-color: lighten($color, 20%);
+    color: $color;
+    cursor: not-allowed;
+  }
+}
+.btn{
+  @include btn();
+  background-color: $primary;
+  @include buttonStates($primary);
+}
+
+.btn-small{
+  @include btn();
+  padding: 0 $baseGutter !important;
+  background-color: $primary;
+  font-size: .9rem;
+  @include buttonStates($primary);
+}
+
+.btn-secondary{
+  @include btn();
+  background-color: $secondary;
+  @include buttonStates($secondary);
+}
+
+.btn-secondary-small{
+  @include btn();
+  padding: 0 $baseGutter !important;
+  background-color: $secondary;
+  font-size: .9rem;
+  @include buttonStates($secondary);
+}
+
+.btn-gray{
+  @include btn();
+  background-color: $gray;
+  @include buttonStates($gray);
+}
+
+.btn-gray-small{
+  @include btn();
+  padding: 0 $baseGutter !important;
+  background-color: $gray;
+  font-size: .9rem;
+  @include buttonStates($gray);
+}
+
+
+//Social button
+.btn-social{
+  transition-duration: $timing;
+  transition-timing-function: ease;
+  transition-property: background-color;
+  margin-right: $baseGutter;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  line-height: 32px;
+  text-align: center;
+  border: none;
+  border-radius: 50%;
+  background-color: $secondary;
+  color:$white;
+  svg{fill:$white;}
+  @include buttonStates($secondary);
+}

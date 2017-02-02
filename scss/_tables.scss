@@ -1,0 +1,33 @@
+//Tables
+table{
+    width: 100%;
+    margin-bottom:$baseGutter;
+    border:1px solid $light-gray;
+    thead{background: darken($white,1%); border-bottom: 1px solid $light-gray;}
+    th{text-align:left; padding: $baseGutter/2;}
+    tr {border-bottom: 1px solid $light-gray;}
+    td{padding: $baseGutter/2;}
+
+    &.highlight{
+        tbody tr:nth-child(even){
+            transition: background-color $timing ease;
+            background-color: darken($white,1%);
+        }
+        tbody tr:hover{background-color: rgba($red,.25);}
+    }
+}
+
+@include respond-to($tabletP){
+
+    /* Force tables to not be like tables anymore */
+    table, table thead, table tbody, table th, table td, table tr{display: block;}
+    /* Hide table headers (but not display: none;, for accessibility) */
+    table thead tr{position: absolute;top: -9999px;left: -9999px;}
+    /* Behave  like a "row" */
+    table td {border: none;position: relative;padding-left: 33% !important;}
+    /* Now like a table header */
+    table td:before {position: absolute;top: 6px;left: 6px;width: 45%;padding-right: 10px;white-space: nowrap;content: attr(data-label); font-weight: bold;}
+    /*table row seperation line*/
+    table td:last-of-type:after{content: " "; height: 2px; background: $light-gray; width: 100%;position: absolute;top:98%;left: 0;}
+
+}

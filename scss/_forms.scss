@@ -1,0 +1,390 @@
+// Forms
+$label-width: 10rem !default;
+$input-width: 20rem !default;
+$input-height: 2.5rem !default;
+$input-bg: $white;
+
+fieldset{margin: 0; padding: 0; border: none; min-height:$input-height;}
+input.error,textarea.error{border:1px solid $red !important;}
+.valid{border:1px solid $green !important;}
+.errorBox{
+    border:1px solid $red !important;
+    color:$red;
+    padding:$baseGutter/2 $baseGutter;
+    margin:$baseGutter/2;
+    background-color: rgba($red,.2);
+}
+
+.input-wrapper{position:relative;}
+
+form{
+      margin-bottom: $baseGutter;
+      padding:$baseGutter 0;
+      label{
+          min-width: $label-width;
+          vertical-align:top;
+          display: inline-block;
+          font-weight:bold;
+          color: #6c7578;
+          font-size: .9rem;
+          font-weight: 300;
+          line-height: 2.5rem;
+          text-align: right;
+          padding-right: $baseGutter;
+
+          &.inline{
+            text-align: left;
+            min-width:$baseGutter;
+            display: inline-block;
+            padding-right:$baseGutter;
+            vertical-align:middle;
+            padding-right: 0;
+          }
+          small{display:block;}
+
+          @include respond-to($mobile){
+              min-width:100%;
+              display:block !important;
+              margin-bottom: $baseGutter/2;
+              text-align: left;
+          }
+      }
+      .errorBox{
+          margin-left:$label-width;
+      }
+      .input-wrapper{
+          margin-bottom: $baseGutter;
+      }
+}
+
+input[type="text"],input[type="tel"],input[type="email"],input[type="password"],input[type="number"] {
+  appearance: none;
+  max-width: 100%;
+  width: $input-width;
+  height: $input-height;
+  line-height: $baseGutter;
+  text-indent: $baseGutter/2;
+
+  @include respond-to($mobile){
+    min-width:100%;
+    display:block;
+  }
+}
+
+input[type="file"]{
+    width: $input-width;
+    height: $input-height;
+    background-color: $light-gray;
+    padding: $baseGutter/2;
+    line-height: $baseGutter;
+    @-moz-document url-prefix() {padding:0;}
+
+    @include respond-to($mobile){
+      max-width:100%;
+      display:block;
+    }
+}
+
+select {
+  width: $input-width;
+  height: $input-height;
+
+  @include respond-to($mobile){
+    max-width:100%;
+    display:block;
+  }
+}
+
+textarea {
+  width: $input-width;
+  height:$input-height*3.5;
+  padding: $baseGutter/2;
+  color: $black;
+  border-style: solid;
+  line-height: $baseGutter*1.5;
+
+
+  @include respond-to($mobile){
+    width:100%;
+    display:block;
+  }
+}
+
+//input color
+input[type="text"],input[type="tel"],input[type="email"],input[type="password"],input[type="number"],
+textarea,
+select {
+transition: box-shadow $timing ease;
+color: $gray;
+font-size: 1rem;
+font-weight: 300;
+border:none;
+border:1px solid $light-gray;
+background-color: $input-bg;
+    &:focus {
+      outline: none;
+      border-color: $primary;
+    }
+}
+
+input:required{
+  //yellow triange with white astrick
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzBweCIgaGVpZ2h0PSIzMHB4IiB2aWV3Qm94PSIwIDAgMzAgMzAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBvbHlnb24gaWQ9IlJlY3RhbmdsZSIgZmlsbD0iI0ZBRDE0OSIgcG9pbnRzPSIwIDAgMzAgMCAzMCAzMCI+PC9wb2x5Z29uPjxwb2x5Z29uIGlkPSIqIiBmaWxsPSIjRkZGRkZGIiBwb2ludHM9IjIyLjcxMjg5MDYgNC4zNTA1ODU5NCAyMi43MTI4OTA2IDcuMTgxNjQwNjIgMjUuNDgwNDY4OCA2LjIxNjc5Njg4IDI1Ljk4ODI4MTIgNy42MjU5NzY1NiAyMy4yMjA3MDMxIDguNTI3MzQzNzUgMjQuOTM0NTcwMyAxMC45MTQwNjI1IDIzLjY3NzczNDQgMTEuODE1NDI5NyAyMi4wMTQ2NDg0IDkuMzM5ODQzNzUgMjAuMzM4ODY3MiAxMS44MTU0Mjk3IDE5LjA0Mzk0NTMgMTAuOTE0MDYyNSAyMC43ODMyMDMxIDguNTI3MzQzNzUgMTcuOTkwMjM0NCA3LjYyNTk3NjU2IDE4LjQ5ODA0NjkgNi4yMTY3OTY4OCAyMS4yNDAyMzQ0IDcuMjA3MDMxMjUgMjEuMjQwMjM0NCA0LjM1MDU4NTk0Ij48L3BvbHlnb24+PC9nPjwvc3ZnPg==') top right no-repeat;
+}
+input:disabled{
+  background-color: lighten($info, 15%);
+  color:$info;
+  cursor: not-allowed;
+}
+
+.radios {
+    label {
+      position: relative;
+    }
+    input[type="radio"] {
+      position:absolute;
+      font-size:1px;
+      top:15px;
+      left:3px;
+      z-index:1;
+
+      &:checked {
+        + span {
+          color: $black;
+          &:before{
+            border: 1px solid $black;
+          }
+          &:after {
+            display:block;
+            content: "✓";
+          }
+        }
+      }
+    }
+    span {
+      position: relative;
+      padding: 0 15px 0 35px;
+      cursor: pointer;
+      font-weight: normal;
+      &:hover {
+        &:before {
+          border-color: darken($light-gray,8%);
+        }
+        &:after{
+          display:block;
+        }
+      }
+      &:before {
+        content: "";
+        color: #000;
+        text-indent: -2px;
+        width: 20px;
+        height: 20px;
+        background-color: $input-bg;
+        border: 1px solid $light-gray;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 9;
+        top: 0;
+        left: 0px;
+        font-size: 40px;
+        line-height: 18px;
+      }
+      &:after {
+        display:none;
+        content: "";
+        position: absolute;
+        z-index: 91;
+        background-color:$secondary;
+        width:16px;
+        height:16px;
+        border-radius:50%;
+        top:2px;
+        left:2px;
+        line-height:15px;
+        color:$black;
+        text-align: center;
+      }
+    }
+  }
+
+  .checkboxes {
+    label {
+      position: relative;
+    }
+      input[type="checkbox"] {
+        position:absolute;
+        font-size:1px;
+        top:15px;
+        left:3px;
+        z-index:1;
+
+        &:checked {
+          + span {
+            &:before {
+              background-color: $secondary;
+              border: 1px solid $secondary;
+              content: "✓";
+            }
+          }
+        }
+      }
+      span {
+        position: relative;
+        padding: 0 10px 0 30px;
+        cursor: pointer;
+        font-weight: normal;
+        &:hover {
+          &:before {
+            background-color: $secondary;
+            border: 1px solid $secondary;
+          }
+        }
+        &:before {
+          content: "";
+          color: $black;
+          text-align: center;
+          width: 20px;
+          height: 20px;
+          background-color: $input-bg;
+          border: 1px solid $light-gray;
+          border-radius: 2px;
+          position: absolute;
+          z-index: 9;
+          top: 0;
+          left: 0px;
+          line-height: 16px;
+        }
+      }
+    }
+
+input[type="range"]{
+    width:$input-width;
+    height:$input-height/2;
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    background-color: $light-gray;
+    outline:none;
+    vertical-align:middle;
+
+    @include respond-to($mobile){
+        width:calc(100% - 90px);
+    }
+
+    // Range Handle
+    &::-webkit-slider-thumb {
+        appearance: none;
+        -webkit-appearance:none;
+        width: 20px;
+        height: 30px;
+        background: $primary;
+        cursor: pointer;
+        border:0;
+        border-radius:$radius;
+
+        &:hover {
+          background: $secondary;
+        }
+    }
+    &::-moz-range-thumb {
+        appearance: none;
+        -moz-appearance:none;
+        width: 20px;
+        height: 30px;
+        background: $primary;
+        cursor: pointer;
+        border:0;
+        border-radius:.5rem;
+
+        &:hover {
+          background: $secondary;
+        }
+    }
+
+    &:active::-webkit-slider-thumb {
+        background: $secondary;
+    }
+
+}
+
+// Range Label
+.range-value {
+  display: inline-block;
+  position: relative;
+  width: 5rem;
+  font-size:.9rem;
+  color: $white;
+  line-height: 1.25rem;
+  text-align: center;
+  border-radius: $radius;
+  background: $secondary;
+  padding: 5px 10px;
+  margin-left: 8px;
+
+  &:after {
+    position: absolute;
+    top: 8px;
+    left: -7px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-right: 7px solid $secondary;
+    border-bottom: 7px solid transparent;
+    content: '';
+  }
+}
+
+//stacked
+
+.form-stacked {
+  label{
+      padding: $baseGutter/4;
+      display: block;
+      width: 100%;
+      small{display:inline-block; padding-left:$baseGutter;}
+  }
+  input[type="text"],input[type="tel"],input[type="email"],input[type="password"],input[type="number"],
+  select,
+  textarea{
+    display: block;
+    width: 100%;
+    margin-bottom: $baseGutter;
+  }
+  input[type="range"]{width:calc(100% - 90px);} //leave room for the value
+  .errorBox{
+    margin-left:0;
+  }
+}
+
+//Inline Form
+.form-inline{
+    input[type="text"],input[type="tel"],input[type="email"],input[type="password"],input[type="number"]{
+        width:$input-width/1.5;
+    }
+    .input-wrapper{
+        display:inline;
+    }
+    .errorBox{
+        position: absolute;
+        margin:0;
+        left:0;
+        width:$input-width/1.5;
+        font-size:.8rem;
+        line-height:1rem;
+        padding:.5rem .5rem .5rem 1.5rem;
+    }
+
+    @include respond-to($mobile){
+        input[type="text"],input[type="tel"],input[type="email"],input[type="password"],input[type="number"]{width:100%;}
+        .input-wrapper{display:block;}
+        .errorBox{position:relative;width:100%;margin: .5rem 0;}
+    }
+}
+
+//HACKS
+//get radios and checkboxes to match on all browsers
+input[type="radio"], input[type="radio"] + span ,input[type="checkbox"],input[type="checkbox"] + span{vertical-align: middle; margin-right: 1rem; font-weight:normal;}
+
+::-moz-range-track {background: $input-bg; border: 0;}
+input::-moz-focus-inner,input::-moz-focus-outer { border: 0; }

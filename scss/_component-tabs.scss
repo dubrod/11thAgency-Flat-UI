@@ -1,0 +1,124 @@
+//Brash Tabs
+
+
+.tablist{
+    margin-top: $baseGutter;
+    display: flex;
+    flex-basis:100%;
+    flex-flow: row nowrap;
+    align-items: stretch;
+
+    button{
+        flex: 1 1 0;
+        color:$white;
+        text-decoration: none;
+        padding: $baseGutter;
+        text-align:center;
+        background-color: $primary;
+        border-top:2px solid $primary;
+        border-left:1px solid $white;
+        border-right:1px solid $white;
+
+        &:first-of-type{border-left: 1px solid $light-gray;}
+        &:last-of-type{border-right: 1px solid $light-gray;}
+
+        &:hover{
+            background-color: $orange-hover;
+            border-top:2px solid $orange-hover;
+        }
+
+        &[aria-selected="true"]{
+            background-color: $white;
+            color:$primary;
+        }
+    }
+}
+
+.tabpanel{
+    padding:$baseGutter*2;
+    border-left:1px solid $light-gray;
+    border-right:1px solid $light-gray;
+    border-bottom:1px solid $light-gray;
+
+    h2, h3, h4{padding-bottom: $baseGutter;margin-bottom: $baseGutter;border-bottom: 1px solid $light-gray;}
+}
+
+[role=tabpanel]{
+    &[aria-hidden="true"]{z-index:9;}
+    &[aria-hidden="false"]{z-index:99;}
+}
+
+
+//Tab Panel Slider Edition
+.tab-slider{
+    position:relative;
+    margin-top: $baseGutter;
+    overflow:hidden;
+
+    &.no-screen .tabpanel-slider .gutter{
+        background-color: transparent !important;
+    }
+
+    .tablist-slider{
+        position: absolute;
+        z-index:999;
+        width:100%;
+        bottom:0;
+        left:0;
+        padding:$baseGutter 0;
+        text-align:center;
+
+
+        button{
+            font-size:0;
+            line-height:1rem;
+            background:transparent;
+
+            &:before{
+            display:block;
+            content: "";
+            font-size:1.5rem;
+            background: $primary;
+            width:1rem;
+            height:1rem;
+            border-radius:50%;
+            }
+
+            &:hover{
+                &:before{
+                    background: $white;
+                }
+            }
+
+            &[aria-selected="true"]{
+                &:before{
+                    background: $secondary;
+                }
+            }
+        }
+    }
+
+    .tabpanel-slider{
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        background-size:cover;
+        background-position: center center;
+
+        .gutter{
+            background-color: rgba($black,.8);
+            padding: 0 $baseGutter*2;
+            height: inherit;
+            color: $white;
+            display:flex;
+            flex-flow: column wrap;
+            justify-content: center;
+
+            p{
+                padding-top: $baseGutter;
+            }
+        }
+    }
+
+}

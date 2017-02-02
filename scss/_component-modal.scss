@@ -1,0 +1,57 @@
+
+.brash-modal_window{
+    display:none;
+    width:80%;
+    height:auto;
+    background-color: $white;
+    position:fixed;
+    top:60px;
+    left:9.5%;
+    z-index:99999;
+    box-shadow: 0 0 20rem 20rem rgba($black,.8);
+
+    .brash-modal_close{
+        text-decoration:none;
+        background:none;
+        position:absolute;
+        z-index:999;
+        top:0;
+        right:5px;
+        padding:$baseGutter/4;
+        color:$black;
+        font-size:1.2rem;
+        display:inline-block;
+        &:before{content:"X";}
+    }
+
+    button.btn{
+        position: absolute;
+        top:40%;
+        opacity:.4;
+        z-index: 999;
+
+        &:hover{opacity:1;}
+    }
+
+    button.next{
+        right:0;
+    }
+    button.prev{
+        left:0;
+    }
+
+    iframe{
+        border:none;
+        width:100%;
+        min-height:60vh;
+    }
+}
+
+.brash_gallery{
+    //no pointer events b/c we need the <a> as the target in the Object
+    img{pointer-events:none;}
+}
+
+.brash-modal_content{
+    padding: $baseGutter*2 $baseGutter;
+}

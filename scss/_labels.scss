@@ -1,0 +1,30 @@
+h1 label, h2 label, h3 label, h4 label{
+  display:inline-block;
+  background-color: $info;
+  color: $white;
+  border-radius: $radius;
+  font-family: $bodyFont;
+  font-weight: normal;
+  vertical-align: top;;
+}
+
+h1 label {font-size:1.5rem; padding: $baseGutter/4 $baseGutter/2;}
+h2 label {font-size:1rem;padding: 0 $baseGutter/2;}
+h3 label {font-size:.9rem; padding: $baseGutter/4 $baseGutter/2;}
+h4 label {font-size:.7rem; padding: 0 $baseGutter/2;}
+
+.label{
+  padding: 0 $baseGutter/4;
+  text-align: center;
+  color:$white;
+  background-color: $info;
+  display:inline-block;
+  border-radius: $radius;
+
+  &-primary{@extend .label; background-color: $primary;}
+  &-secondary{@extend .label; background-color: $secondary;}
+  &-success{@extend .label; background-color: $success;}
+  &-info{@extend .label; background-color: $purple;}
+  &-warning{@extend .label; background-color: $warning;}
+  &-danger{@extend .label; background-color: $danger;}
+}

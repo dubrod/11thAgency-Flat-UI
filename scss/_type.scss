@@ -1,0 +1,40 @@
+//Brash Type Scale
+
+h1, .h1{ font-size:2.6rem; line-height:2rem; font-family: $headingFont; font-weight:600;}
+h2, .h2{ font-size:1.8rem; line-height:2rem; font-family: $headingFont; font-weight:600;}
+h3, .h3{ font-size:1.4rem; line-height:1rem; font-family: $headingFont; font-weight:600;}
+h4, .h4{ font-size:1rem; line-height:1.25rem; font-family: $headingFont; font-weight:600;}
+
+small, .small{font-size: .8rem;}
+
+.primary{color:$primary;}
+.secondary{color:$secondary;}
+.gray{color:$gray;}
+.red{color: $red;}
+.white{color:$white;}
+.black{color:$black;}
+.blue{color:$blue;}
+
+.lined-title{
+  border-bottom: 1px solid darken($info, 10%);
+}
+.info-title{
+  color: $info;
+  font-weight: 400;
+  position: relative;
+  text-transform: uppercase;
+  span{
+    padding: $baseGutter;
+    display:inline-block;
+  }
+  i{
+    position:absolute;top:$baseGutter;right:0;font-style: normal;
+    font-family: $bodyFont; font-weight: normal; font-size: 80%;
+  }
+}
+
+.info-link{font-size:1rem;color:$blue;}
+.info-dot{
+  display:inline-block;background-color: $info;color:$white;font-style: normal;
+  width:24px;height:24px;text-align: center;border-radius: 50%;font-size:.8rem;
+}

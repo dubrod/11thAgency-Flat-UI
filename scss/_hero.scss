@@ -1,0 +1,24 @@
+//Brash Hero
+// a hero is a plank, typically a background image and a heading
+//setting the height inline so you can control it via your CMS
+//or you can change that and set it here
+
+.hero{
+    width: 100%;
+    background-size:cover;
+    background-position: center center;
+
+    .tlayer{
+        background-color: rgba(0,0,0,.7);
+        height:inherit;
+        header{
+            height:inherit;
+            display:flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            color: $white;
+            line-height:$baseGutter*3;
+            h1{color: $primary;}
+        }
+    }
+}

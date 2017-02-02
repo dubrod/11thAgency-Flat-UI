@@ -1,0 +1,37 @@
+
+
+dl.accordion{
+      margin-top:$baseGutter;
+
+    dt{
+      padding: $baseGutter/2;
+      cursor:pointer;
+      margin-top: .2rem;
+      background-color: $light-gray;
+      display:flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items:center;
+      width:100%;
+      transition: background-color $timing ease;
+
+      &:hover{
+        background-color: darken($light-gray,2%);
+      }
+
+      &.active{
+        background-color:$primary;
+        color:$white;
+        svg{
+            fill:$white;
+            transform:rotate(180deg);
+        }
+      }
+    }
+
+    dd{
+      margin:0;
+      padding: $baseGutter/2;
+    }
+
+}

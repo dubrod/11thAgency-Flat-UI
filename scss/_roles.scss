@@ -1,0 +1,82 @@
+[role=banner]{
+    width:100%;
+    background-color: $info;
+
+    section{
+        display:flex;
+        flex-direction: row;
+
+        @include respond-to($oldmobile){
+            flex-direction: column;
+        }
+    }
+
+    #logo{
+        padding: $baseGutter 0;
+        flex-basis: 50%;
+        a{color:$black;}
+        svg{fill: $black;height:40px;}
+        span{vertical-align:middle;}
+
+        @include respond-to($oldmobile){
+            flex-basis: 100%;
+            text-align:center;
+        }
+    }
+
+}
+
+[role=navigation]{
+    @extend .container;
+    background-color: darken($info,10%);
+
+    ul{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: stretch;
+        li{
+            flex: 1 1 0;
+            a{
+                display:block;
+                color:$black;
+                text-decoration: none;
+                padding: $baseGutter;
+                text-align:center;
+
+                &:hover{
+                    color:$white;
+                    background-color: darken($info,20%);
+                }
+            }
+        }
+
+        @include respond-to($mobile){
+            flex-flow: column nowrap;
+        }
+    }
+}
+
+[role=complementary]{
+
+    p{
+        margin-bottom: $baseGutter;
+    }
+
+    ul{
+
+        li{
+            padding: 0 0 $baseGutter 0;
+        }
+    }
+
+}
+
+[role=contentinfo]{
+    width: 100%;
+    background-color: $gray;
+    color: $black;
+    font-size: .9rem;
+    p{
+        padding: $baseGutter 0;
+    }
+}
